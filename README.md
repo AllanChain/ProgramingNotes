@@ -25,15 +25,16 @@ cp ~/pythonPro/jupyter_notebook_config.py ~/.jupyter/
 ```
 ## Git
 ### Push without Password in Linux
+- First
 ```shell
 cd ~
 touch .git-credentials
 vim .git-credentials
 ```
-Then type:
+- Then type:
 `https://{username}:{password}@github.com`
-Finally:
+- Finally:
 ```shell
 git config --global credential.helper store
 ```
-And you will see `[credential]helper = store` in `.gitconfig`
+- And you will see `[credential]helper = store` in `.gitconfig`
