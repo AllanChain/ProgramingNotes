@@ -4,7 +4,9 @@ My notes for programing.
 - [Python](#python)
     - [Python the Language](#python-the-language)
 - [Termux](#termux)
+    - [Initial Setup](#initial-setup)
 - [Git](#git)
+    - [Push without Password in Linux](#push-without-password-in-linux)
 ## Python
 ### Python the Language
 ## Termux
@@ -22,3 +24,16 @@ ln -s ~/storage/shared/123/cppPro
 cp ~/pythonPro/jupyter_notebook_config.py ~/.jupyter/
 ```
 ## Git
+### Push without Password in Linux
+```shell
+cd ~
+touch .git-credentials
+vim .git-credentials
+```
+Then type:
+`https://{username}:{password}@github.com`
+Finally:
+```shell
+git config --global credential.helper store
+```
+And you will see `[credential]helper = store` in `.gitconfig`
