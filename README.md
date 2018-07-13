@@ -2,15 +2,36 @@
 My notes for programing.
 ## Table of Contents
 - [Python](#python)
+    - [Read the Character Straight](#read-the-character-straight)
     - [Python the Language](#python-the-language)
 - [Termux](#termux)
     - [Initial Setup](#initial-setup)
 - [Git](#git)
     - [Push without Password in Linux](#push-without-password-in-linux)
 ## Python
+#### Read the Character Straight
+##### On Linux
+```python
+import  os
+import  sys
+import  tty, termios
+fd = sys.stdin.fileno()
+old_settings = termios.tcgetattr(fd)
+try :
+   tty.setraw( fd )
+   ch = sys.stdin.read( 1 )
+finally :
+
+   termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+```
+##### On Windows
+```python
+import  msvcrt
+ch = msvcrt.getch()
+```
 ### Python the Language
 ## Termux
-### Initial Setup
+#### Initial Setup
 ```shell
 apt install clang python python-dev fftw libzmq libzmq-dev freetype freetype-dev libpng libpng-dev pkg-config curl vim-python zsh
 curl -L https://its-pointless.github.io/setup-pointless-repo.sh | sh
@@ -24,7 +45,7 @@ ln -s ~/storage/shared/123/cppPro
 cp ~/pythonPro/jupyter_notebook_config.py ~/.jupyter/
 ```
 ## Git
-### Push without Password in Linux
+#### Push without Password in Linux
 - First
 ```shell
 cd ~
