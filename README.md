@@ -42,6 +42,13 @@ QtDisigner is convenient, but it doesn't come along with the none GPL version. T
 ### Python the Language
 ## Termux
 #### Initial Setup
+- First,run:
+```shell
+termux-setup-storage
+ln -s ~/storage/shared/123/pythonPro
+```
+- Then, in directory `pythonPro`,run `sh setup.sh`. 
+- And the content of `setup.sh` is as followed:
 ```shell
 apt install clang python python-dev fftw libzmq libzmq-dev freetype freetype-dev libpng libpng-dev pkg-config curl vim-python zsh
 curl -L https://its-pointless.github.io/setup-pointless-repo.sh | sh
