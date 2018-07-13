@@ -3,6 +3,7 @@ My notes for programing.
 ## Table of Contents
 - [Python](#python)
     - [Read the Character Straight](#read-the-character-straight)
+	- [Downloading Binary Package on Windows](#downloading-binary-package-on-windows)
     - [Python the Language](#python-the-language)
 - [Termux](#termux)
     - [Initial Setup](#initial-setup)
@@ -29,6 +30,11 @@ finally :
 import  msvcrt
 ch = msvcrt.getch()
 ```
+#### Downloading Binary Package on Windows
+Copied from StackOverflow
+> As the other responses pointed out, one solution is to install Visual Studio 2015. However, it takes a few GBs of disk space. One way around is to install precompiled binaries. 
+> 
+> The webpage [http://www.lfd.uci.edu/~gohlke/pythonlibs](http://www.lfd.uci.edu/~gohlke/pythonlibs) contains precompiled binaries for many Python packages.
 ### Python the Language
 ## Termux
 #### Initial Setup
