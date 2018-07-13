@@ -38,7 +38,9 @@ Copied from StackOverflow
 > The webpage [http://www.lfd.uci.edu/~gohlke/pythonlibs](http://www.lfd.uci.edu/~gohlke/pythonlibs) contains precompiled binaries for many Python packages.
 #### QtDisigner Install
 QtDisigner is convenient, but it doesn't come along with the none GPL version. Then it is for you.
-`pip install pyqt5_tools`
+```shell
+pip install pyqt5_tools
+```
 ### Python the Language
 ## Termux
 #### Initial Setup
