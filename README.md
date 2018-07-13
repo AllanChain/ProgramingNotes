@@ -4,6 +4,7 @@ My notes for programing.
 - [Python](#python)
     - [Read the Character Straight](#read-the-character-straight)
 	- [Downloading Binary Package on Windows](#downloading-binary-package-on-windows)
+	- [QtDisigner Install](#qtdisigner-install)
     - [Python the Language](#python-the-language)
 - [Termux](#termux)
     - [Initial Setup](#initial-setup)
