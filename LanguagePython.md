@@ -30,6 +30,7 @@ print ('-'*5,a.printf)
 A.printf=printff
 a.printf()
 print ('-'*5,a.printf)
+print ('-'*5,A.printf)
 
 ##Output
 ##(<__main__.A object at 0x01371070>,)
@@ -41,5 +42,6 @@ print ('-'*5,a.printf)
 ##()
 ##----- <function printff at 0x01795858>
 ##()
+##----- <function printff at 0x01795858>
 ##----- <function printff at 0x01795858>
 ```
