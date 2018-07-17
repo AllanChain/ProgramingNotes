@@ -42,6 +42,7 @@ QtDisigner is convenient, but it doesn't come along with the none GPL version. T
 pip install pyqt5_tools
 ```
 ### Python the Language
+Visit [`LanguagePython.md`](https://github.com/AllanChain/ProgramingNotes/LanguagePython.md)
 ## Termux
 #### Initial Setup
 - First,run:
