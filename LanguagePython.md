@@ -1,7 +1,7 @@
 # Python the Language
 Notes for python language itself.
 ## Table of Contents
-- [Interesting Things About Class](interesting-things-about-class)
+- [Interesting Things About Class](#interesting-things-about-class)
 ## Interesting Things About Class
 Let's have a look at the following code first:
 ```python
