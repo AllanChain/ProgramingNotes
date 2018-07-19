@@ -50,5 +50,5 @@ And from this kind of behavior, I think I leart :
 - The function specificly assigned to the class later will become its `bound method` too. And magically, the name will change to the function's name. What's more, when I call `a.printff` ,it throw an error.
 - The python interpreter treated built-in functions diffrently. Thus function `print` wound not become a `bound method`.
 - After the function is assign to the instance, it would not become a `bound method`, but rather simply a function.
-- After a function is assign to the instance, the corresponding `bound method` in the class would magically change.
+- ~~After a function is assign to the instance, the corresponding `bound method` in the class would magically change.~~
 - (Though I **really don't** know some of them ,I think I'd better put them down)
