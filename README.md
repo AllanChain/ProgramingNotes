@@ -80,7 +80,7 @@ if __name__=='__main__':
     Thread(target=open_xbrowser).start()
     start_grip()
 ```
-And alias it as `md`. It is rather convenient
+And alias it as `mkdn` (`md` is the alias of `mkdir`). It is rather convenient.
 ### Python the Language
 Visit [`LanguagePython.md`](https://github.com/AllanChain/ProgramingNotes/blob/master/LanguagePython.md)
 ## Termux
