@@ -53,3 +53,15 @@ And from this kind of behavior, I think I leart :
 - ~~After a function is assign to the instance, the corresponding `bound method` in the class would magically change.~~
 - After a function is assign to the instance, the **behavoir** when assigning functions again to an class would **magically** change.
 - (Though I **really don't** know some of them ,I think I'd better put them down)
+## Python Exceptions
+I encountered this problem when writing `nb.py`. I wrote`except Exception:` instead of `except KeyboardInterrupt:` ,and it did not catch the KeyboardInterrupt as I expected. But now I figured out that KeyboardInterrupt is not included in Exception:
+```shell
+BaseException
++-- SystemExit
++-- KeyboardInterrupt
++-- GeneratorExit
++-- Exception
+    +-- ...
+	+-- ...
+```
+
