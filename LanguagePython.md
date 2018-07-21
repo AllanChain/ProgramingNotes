@@ -3,6 +3,7 @@ Notes for python language itself.
 ## Table of Contents
 - [Interesting Things About Class](#interesting-things-about-class)
 - [Python Exceptions](#python-exceptions)
+- [Slicing](#slicing)
 ## Interesting Things About Class
 Let's have a look at the following code first:
 ```python
@@ -65,4 +66,41 @@ BaseException
     +-- ...
 	+-- ...
 ```
+## Slicing
+#### Here is a valid slice
+```python
+s='jksahgijsdhgedhjgkh'
+print(s[5:999])
 
+##Output
+##gijsdhgedhjgkh
+```
+#### a valid way to create a slice
+```python
+a=slice(1,5,2)
+print(a.start)
+print(a.stop,a.step)
+
+##Output
+##1
+##5 2
+```
+#### the invalid way
+```python
+a=[1:3:4]
+
+##Output
+##SyntaxError
+```
+#### cooperate with class
+```python
+class A:
+    def __getitem__(self,arg):
+	    print(arg)
+		return 
+a=A()
+b=a[123,...,1:3:5,[1,2,3]]
+
+##Output
+##(123, Ellipsis, slice(1, 3, 5), [1, 2, 3])
+```
