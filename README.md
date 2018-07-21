@@ -9,6 +9,7 @@ My notes for programing.
     - [Python the Language](#python-the-language)
 - [Termux](#termux)
     - [Initial Setup](#initial-setup)
+	- [ImportError dlopen failed](#importerror-dlopen-failed)
 - [Git](#git)
     - [Push without Password in Linux](#push-without-password-in-linux)
 ## Python
@@ -104,6 +105,8 @@ ln -s ~/storage/shared/qpython
 ln -s ~/storage/shared/123/cppPro
 cp ~/pythonPro/jupyter_notebook_config.py ~/.jupyter/
 ```
+#### ImportError dlopen failed
+I haven't clearly figure out what's happening, but uninstall and reinstall the packege absolutely helps.
 ## Git
 #### Push without Password in Linux
 - First
