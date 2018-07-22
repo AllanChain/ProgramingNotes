@@ -12,6 +12,7 @@ My notes for programing.
 	- [ImportError dlopen failed](#importerror-dlopen-failed)
 - [Git](#git)
     - [Push without Password in Linux](#push-without-password-in-linux)
+	- [Add SSH Keys](#add-ssh-keys)
 ## Python
 #### Read the Character Straight
 ##### On Linux
@@ -122,3 +123,22 @@ vim .git-credentials
 git config --global credential.helper store
 ```
 - And you will see `[credential]helper = store` in `.gitconfig`
+#### Add SSH Keys
+- Open Terminal.
+- Paste the text below, substituting in your GitHub email address.
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+- This creates a new ssh key, using the provided email as a label.
+```
+Generating public/private rsa key pair.
+```
+- When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+```
+ Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+ ```
+- At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+```
+ Enter passphrase (empty for no passphrase): [Type a passphrase]
+ Enter same passphrase again: [Type passphrase again]
+ ```
