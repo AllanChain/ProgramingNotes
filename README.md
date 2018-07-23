@@ -84,7 +84,7 @@ if __name__=='__main__':
 ```
 And alias it as `mkdn` (`md` is the alias of `mkdir`). It is rather convenient.
 ### Python the Language
-Visit [`LanguagePython.md`](https://github.com/AllanChain/ProgramingNotes/blob/master/LanguagePython.md)
+Visit [`LanguagePython.md`](https://github.com/AllanChain/ProgramingNotes/blob/master/LanguagePython.md) or [raw version](LanguagePython.md)
 ## Termux
 #### Initial Setup
 - First,run:
