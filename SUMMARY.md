@@ -10,5 +10,5 @@
     * [Initialize](termux/init.md)
     * [Error Handling](termux/errors.md)
 * [Git](git/README.md)
-    * [Push without Password](git/password.md
+    * [Push without Password](git/password.md)
 
