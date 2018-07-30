@@ -13,10 +13,6 @@ My notes for programing.
 - [Git](#git)
     - [Push without Password in Linux](#push-without-password-in-linux)
 	- [Add SSH Keys](#add-ssh-keys)
-## Python
-## Termux
-#### ImportError dlopen failed
-I haven't clearly figure out what's happening, but uninstall and reinstall the packege absolutely helps.
 ## Git
 #### Add SSH Keys
 - Open Terminal.
