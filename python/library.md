@@ -2,6 +2,7 @@
 In this section, some of python standard library and the magic operation are introduced
 ## Table of Contents
 - [Read the Character Straight](#read-the-character-straight)
+- [Module readline](#module-readline)
 
 ### Read the Character Straight
 #### On Linux
@@ -24,3 +25,22 @@ import  msvcrt
 ch = msvcrt.getch()
 ```
 
+###Module readline
+Here is my simple script on readline.
+
+```python
+import readline
+import os
+
+def completer(text,state):
+    ds=os.listdir()
+    rs=list(filter(lambda s:s.startswith(text),ds))
+    if state<len(rs):
+        return rs[state]
+    return None
+readline.parse_and_bind("tab: complete")
+readline.set_completer(completer)
+input()
+```
+
+Expecially notice that if there's any exception raised in your script, nothing would happen when you pressed <tab>.The best way I thought of is to call `completer('c',0)` first and check the return value when debugging.
