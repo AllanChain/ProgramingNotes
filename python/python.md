@@ -4,8 +4,10 @@ Notes for python language itself.
 - [Interesting Things About Class](#interesting-things-about-class)
 - [Python Exceptions](#python-exceptions)
 - [Slicing](#slicing)
+
 ## Interesting Things About Class
 Let's have a look at the following code first:
+
 ```python
 class A:
     def printf(*args):
@@ -46,6 +48,7 @@ print ('-'*5,A.printf)
 ##()
 ##----- <function printff at 0x01795858>
 ##----- <function printff at 0x01795858>
+
 ```
 And from this kind of behavior, I think I leart :
 - The method defined in the class is called `bound method`.
@@ -55,6 +58,7 @@ And from this kind of behavior, I think I leart :
 - ~~After a function is assign to the instance, the corresponding `bound method` in the class would magically change.~~
 - After a function is assign to the instance, the **behavoir** when assigning functions again to an class would **magically** change.
 - (Though I **really don't** know some of them ,I think I'd better put them down)
+
 ## Python Exceptions
 I encountered this problem when writing `nb.py`. I wrote`except Exception:` instead of `except KeyboardInterrupt:` ,and it did not catch the KeyboardInterrupt as I expected. But now I figured out that KeyboardInterrupt is not included in Exception:
 ```shell
@@ -66,8 +70,10 @@ BaseException
     +-- ...
 	+-- ...
 ```
+
 ## Slicing
 #### Here is a valid slice
+
 ```python
 s='jksahgijsdhgedhjgkh'
 print(s[5:999])
@@ -75,6 +81,7 @@ print(s[5:999])
 ##Output
 ##gijsdhgedhjgkh
 ```
+
 #### a valid way to create a slice
 ```python
 a=slice(1,5,2)

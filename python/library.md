@@ -2,6 +2,7 @@
 In this section, some of python standard library and the magic operation are introduced
 ## Table of Contents
 - [Read the Character Straight](#read-the-character-straight)
+
 ### Read the Character Straight
 #### On Linux
 ```python
