@@ -43,5 +43,8 @@ readline.set_completer(completer)
 input()
 ```
 
-必须注意如果在函数中有错误的话，在你按下tab键后什么都不会发生（新手会在这里卡壳。`readline`非常高级地封装了你的函数，但这对debug来说不见得是一件好事。较好的方法是先调用一下你的函数`completer('c',0)`并检查输出。
-Expecially notice that if there's any exception raised in your script, nothing would happen when you pressed <tab>.The best way I thought of is to call `completer('c',0)` first and check the return value when debugging.
+- 必须注意如果在函数中有错误的话，在你按下tab键后什么都不会发生（新手会在这里卡壳。`readline`非常高级地封装了你的函数，但这对debug来说不见得是一件好事。较好的方法是先调用一下你的函数`completer('c',0)`并检查输出。
+- 形象理解的话，`state`其实就是第几选项的序号。
+
+- Expecially notice that if there's any exception raised in your script, nothing would happen when you pressed <tab>.The best way I thought of is to call `completer('c',0)` first and check the return value when debugging.
+- As for the parameter `state` , it's just a index of the options.
