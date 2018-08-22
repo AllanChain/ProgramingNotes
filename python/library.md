@@ -25,7 +25,7 @@ import  msvcrt
 ch = msvcrt.getch()
 ```
 
-###Module readline
+### Module readline
 Here is my simple script on readline.
 
 ```python
