@@ -4,6 +4,8 @@ Notes for python language itself.
 - [Interesting Things About Class](#interesting-things-about-class)
 - [Python Exceptions](#python-exceptions)
 - [Slicing](#slicing)
+- [iter take callable argument](#iter_take_callable_argument)
+
 
 ## Interesting Things About Class
 Let's have a look at the following code first:
@@ -111,3 +113,13 @@ b=a[123,...,1:3:5,[1,2,3]]
 ##Output
 ##(123, Ellipsis, slice(1, 3, 5), [1, 2, 3])
 ```
+
+## iter take callable argument
+
+```
+def seek_next_line(f):
+    for c in iter(lambda: f.read(1),'\n'):
+	        pass
+```
+
+			The `iter(callable, until_value)` function repeatedly calls callable and yields its result until until_value is returned.
