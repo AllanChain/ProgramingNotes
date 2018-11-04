@@ -4,7 +4,7 @@ Notes for python language itself.
 - [Interesting Things About Class](#interesting-things-about-class)
 - [Python Exceptions](#python-exceptions)
 - [Slicing](#slicing)
-- [iter take callable argument](#iter_take_callable_argument)
+- [iter take callable argument](#iter-take-callable-argument)
 
 
 ## Interesting Things About Class
@@ -50,9 +50,10 @@ print ('-'*5,A.printf)
 ##()
 ##----- <function printff at 0x01795858>
 ##----- <function printff at 0x01795858>
-
 ```
+
 And from this kind of behavior, I think I leart :
+
 - The method defined in the class is called `bound method`.
 - The function specificly assigned to the class later will become its `bound method` too. And **magically**, the name will change to the function's name. What's more, when I call `a.printff` ,it throw an error.
 - The python interpreter treated built-in functions diffrently. Thus function `print` wound not become a `bound method`.
@@ -122,4 +123,4 @@ def seek_next_line(f):
 	        pass
 ```
 
-			The `iter(callable, until_value)` function repeatedly calls callable and yields its result until until_value is returned.
+The `iter(callable, until_value)` function repeatedly calls callable and yields its result until until_value is returned.
