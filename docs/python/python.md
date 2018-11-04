@@ -1,11 +1,5 @@
 # Python the Language
 Notes for python language itself.
-## Table of Contents
-- [Interesting Things About Class](#interesting-things-about-class)
-- [Python Exceptions](#python-exceptions)
-- [Slicing](#slicing)
-- [iter take callable argument](#iter-take-callable-argument)
-
 
 ## Interesting Things About Class
 Let's have a look at the following code first:

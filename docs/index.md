@@ -1,21 +1,9 @@
-# Welcome to MkDocs
+# My Programing Notes
+## Quick Navigation
+- python
+    - [Python The Language](python/python.md)
+    - [Package Notes](python/package.md)
+    - [Pip&Pypi](python/pip.md)
+    - [Standard Library](python/library.md)
+- Git
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Python Notes
-- [python](python/python.md)
-- [qy](README.md)

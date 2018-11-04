@@ -1,10 +1,7 @@
 # Standard Library
 In this section, some of python standard library and the magic operation are introduced
-## Table of Contents
-- [Read the Character Straight](#read-the-character-straight)
-- [Module readline](#module-readline)
 
-### Read the Character Straight
+## Read the Character Straight
 #### On Linux
 ```python
 import  os
@@ -25,7 +22,7 @@ import  msvcrt
 ch = msvcrt.getch()
 ```
 
-### Module readline
+## Module readline
 Here is my simple script on readline.
 
 ```python

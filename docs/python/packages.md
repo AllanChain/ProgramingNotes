@@ -1,14 +1,11 @@
 # Package Notes
-## Table of contents
-- [QtDisigner Install](#qtdisigner-install)
-- [Previewing Markdown](#previewing-markdown)
 
-### QtDisigner Install
+## QtDisigner Install
 QtDisigner is convenient, but it doesn't come along with the none GPL version. Then it is for you.
 ```shell
 pip install pyqt5_tools
 ```
-### Previewing Markdown
+## Previewing Markdown
 `grip` is an excellent Flask app and python module to view markdown and easy to use. Just run:
 ```shell
 pip install grip
