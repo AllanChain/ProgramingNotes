@@ -5,6 +5,7 @@
 - 使Ctrl+C能使让应用结束
 - 能自动识别使用什么应用
 
+Download [xb.py](xb.py)
 ```python
 from os import popen
 from sys import argv

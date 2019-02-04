@@ -2,6 +2,7 @@
 `requests` 模块获取http回复十分方便，一句`requests.get(url)`即可搞定。
 下面贴上从`mliucixin.zuopinj.com/`抓取刘慈欣小说全集的代码：
 
+Download [lcx_spider.py](lcx_spider.py)
 ```python
 import requests
 from re import findall
