@@ -11,5 +11,5 @@
 - Git
     - [Push without Password](git/password.md)
     - [Add SSH Key](git/ssh.md)
-- [Daily](daily.md)
+- Blogs
 
