@@ -29,21 +29,29 @@ app_nickname = {'j': 'jupyter notebook --no-browser',
                 'd': 'grip',
                 'k': 'mkdocs serve'}
 def guess_app():
-    from os import listdir
+    from os import listdir, getcwd, chdir
+    from os.path import splitext
 
     app_trait = {'.ipynb': 'j',
-                 '.md': 'd',
-                 'mkdocs.yml': 'k'}
-    for i in listdir():
-        for j in ('.ipynb', '.md', 'mkdocs.yml'):
-            if i.endswith(j):
-                return app_trait[j]
+                 '.md': 'd'}
+    # Support launch mkdocs even deep inside the directory
+    chdir(getcwd().split('docs')[0])
+    if 'mkdocs.yml' in listdir():
+        return 'k'
+    exts = {}
+	# Convert to only extentions
+    all_file = list(map(lambda x: splitext(x)[1], listdir()))
+    for k in app_trait:
+        exts[k] = all_file.count(k)
+    # Get the most frequent one
+    most = sorted([(k, v)for k, v in exts.items()],
+                  key=lambda x: x[1], reverse=True)[0][0]
+    return app_trait[most]
 ```
 - 有时候应用不止一次地输出应打开的地址，这时要立一个flag
 ```python
-XB_STATUS = False
 def start_app(cmd):
-    global XB_STATUS
+    XB_STATUS = False
 	......
 	r = findall('http://.*/', line) or findall('http://.*$', line)
 	if len(r) > 0 and not XB_STATUS:
