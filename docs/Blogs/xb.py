@@ -16,18 +16,22 @@ def guess_app():
     app_trait = {'.ipynb': 'j',
                  '.md': 'd'}
     # Support launch mkdocs even deep inside the directory
-    chdir(getcwd().split('docs')[0])
     if 'mkdocs.yml' in listdir():
         return 'k'
+    pwd = getcwd()
+    if 'docs' in pwd:
+        chdir(pwd.split('docs')[0])
+        if 'mkdocs.yml' in listdir():
+            return 'k'
+        chdir(pwd)
+    if len(argv) > 1 and argv[1].endswith('.md') or 'README.md' in listdir():
+        return 'd'
     exts = {}
     # Convert to only extentions
-    all_file = list(map(lambda x: splitext(x)[1], listdir()))
-    for k in app_trait:
-        exts[k] = all_file.count(k)
-    # Get the most frequent one
-    most = sorted([(k, v)for k, v in exts.items()],
-                  key=lambda x: x[1], reverse=True)[0][0]
-    return app_trait[most]
+    all_file = set(map(lambda x: splitext(x)[1], listdir()))
+    if '.ipynb' in all_file:
+        return 'j'
+    raise NotImplementedError('No application found to implement this.')
 
 
 def get_app():
