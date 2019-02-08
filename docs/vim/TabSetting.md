@@ -24,4 +24,4 @@ Then, I tried to write the config above to `~/.vim/after/settab.vim`. And proble
 
 > [Another](https://stackoverflow.com/questions/10893676/why-doesnt-setting-ts-4-in-vimrc-work) saied use `:verbose set tabstop?` to see where did the variable last set. 
 
-And it showed it was in `~/.vim/view/xxxxx`. Then I deleted all files under it(the config still in `~/.vimrc`). Problem solved!
+And it showed it was in `~/.vim/view/xxxxx`. That is because I run autocmd to save and load view. Then I deleted all files under it(the config still in `~/.vimrc`). And I made mkview explicit by comment out the autocmd. Problem solved!
