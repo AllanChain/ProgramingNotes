@@ -20,4 +20,8 @@ After Googling for a while, I found that it is said that there are some file spe
 > And the struct of vim plugin:
 > <http://learnvimscriptthehardway.stevelosh.com/chapters/42.html#vimplugin>
 
-Finally, I wrote the config above to `~/.vim/after/settab.vim`. And problem solved!
+Then, I tried to write the config above to `~/.vim/after/settab.vim`. And problem is still there.
+
+> [Another](https://stackoverflow.com/questions/10893676/why-doesnt-setting-ts-4-in-vimrc-work) saied use `:verbose set tabstop?` to see where did the variable last set. 
+
+And it showed it was in `~/.vim/view/xxxxx`. Then I deleted all files under it(the config still in `~/.vimrc`). Problem solved!
