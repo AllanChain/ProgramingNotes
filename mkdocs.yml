@@ -1,2 +1,6 @@
 site_name: ProgramingNotes
-theme: material
+theme: 
+    name: material
+    palette:
+        primary: light blue
+        accent: 'indigo'

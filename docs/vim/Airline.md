@@ -21,6 +21,7 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'y': 80}
 ```
 > Note: Only when nocompatible set can you use `\` to continue line.
+
 ![](AirlineImg/1.jpg)
 #### No fancy `>` s there!
 Enable fancy fonts!
@@ -64,7 +65,7 @@ let g:airline_theme = 'badwolf'
 ```
 ![](AirlineImg/7.jpg)
 ![](AirlineImg/8.jpg)
-#### Do not want extra > s?
+#### Do not want extra `>` s?
 Disable it!
 ```vim
 let g:airline_skip_empty_sections = 1
