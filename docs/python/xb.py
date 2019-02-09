@@ -7,19 +7,31 @@ from re import findall
 app_nickname = {'j': 'jupyter notebook --no-browser',
                 'd': 'grip',
                 'k': 'mkdocs serve'}
-XB_STATUS = False
 
 
 def guess_app():
-    from os import listdir
+    from os import listdir, getcwd, chdir
+    from os.path import splitext
 
     app_trait = {'.ipynb': 'j',
-                 '.md': 'd',
-                 'mkdocs.yml': 'k'}
-    for i in listdir():
-        for j in ('.ipynb', '.md', 'mkdocs.yml'):
-            if i.endswith(j):
-                return app_trait[j]
+                 '.md': 'd'}
+    # Support launch mkdocs even deep inside the directory
+    if 'mkdocs.yml' in listdir():
+        return 'k'
+    pwd = getcwd()
+    if 'docs' in pwd:
+        chdir(pwd.split('docs')[0])
+        if 'mkdocs.yml' in listdir():
+            return 'k'
+        chdir(pwd)
+    if len(argv) > 1 and argv[1].endswith('.md') or 'README.md' in listdir():
+        return 'd'
+    exts = {}
+    # Convert to only extentions
+    all_file = set(map(lambda x: splitext(x)[1], listdir()))
+    if '.ipynb' in all_file:
+        return 'j'
+    raise NotImplementedError('No application found to implement this.')
 
 
 def get_app():
@@ -33,14 +45,14 @@ def get_app():
 
 
 def start_app(cmd):
-    global XB_STATUS
+    XB_STATUS = False
     try:
         backup = subprocess.Popen(
             cmd.split(), shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         for line in iter(backup.stdout.readline, b''):
             line = line.rstrip().decode('utf8')
             r = findall('http://.*/', line) or findall('http://.*$', line)
-            if len(r) > 0 and not XB_STATUS:
+            if r and not XB_STATUS:
                 print(r[0])
                 popen('termux-open-url "%s"' % r[0])
                 XB_STATUS = True
@@ -55,5 +67,4 @@ def start_app(cmd):
 
 
 if __name__ == '__main__':
-    cmd = get_app()
-    start_app(cmd)
+    start_app(get_app())
