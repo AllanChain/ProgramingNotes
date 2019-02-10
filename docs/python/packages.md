@@ -19,3 +19,6 @@ pipdeptree         " to see the whole tree
 pipdeptree -p pack " to see the tree of pack
 pipdeptree -r -p pack " to see packages which are dependent on pack
 ```
+
+## Images to PDF
+package img2pdf offers a lossless and fast conversion from images to pdf file which depends on `Pillow`
