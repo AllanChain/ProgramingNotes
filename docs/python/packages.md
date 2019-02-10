@@ -14,3 +14,8 @@ Note that grip need Internet access because it depends on github markdown api to
 
 ## Pip dependency tree view
 `pip` offers a `freeze` command to view installed packages, but not so good to see the dependencies.
+```
+pipdeptree         " to see the whole tree
+pipdeptree -p pack " to see the tree of pack
+pipdeptree -r -p pack " to see packages which are dependent on pack
+```
