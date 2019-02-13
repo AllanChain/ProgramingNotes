@@ -33,6 +33,7 @@ for i in range(num):
 <meta http-equiv="Cache-Control" content="no-transform" />
 <link rel="stylesheet" type="text/css" href="http://zuopinj.com/css/ydread.css"/>
 <script src="http://zuopinj.com/js/wap.js"></script>
+</head>
 <body>
 <div id="readerWarp">
 <h1 id="title">第2章 “万年炎帝”号</h1>
