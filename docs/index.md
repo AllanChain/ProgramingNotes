@@ -1,18 +1,14 @@
-# 目录
-- git
-    - [Push without Password](./git/password.md)
-    - [Split a Repo](./git/SplitRepo.md)
-    - [Add SSH Key](./git/ssh.md)
+# Table of Contents
 - python
     - [ 无法运行一些老旧程序](./python/DailySnippets.md)
     - [在ftp文件夹视图下实现双击打开文件](./python/FTPFileDbClickOpen.md)
+    - [Requests初探](./python/RequestsGlimpse.md)
+    - [让Termux对浏览器更友好](./python/TermuxWithBrowser.md)
     - [Package Notes](./python/packages.md)
     - [Pip&Pypi](./python/pip.md)
     - [Python the Language](./python/python.md)
     - [Read the Character Straight](./python/readchr.md)
     - [Module readline](./python/readline.md)
-    - [Requests初探](./python/RequestsGlimpse.md)
-    - [让Termux对浏览器更友好](./python/TermuxWithBrowser.md)
 - termux
     - [Error Handling](./termux/errors.md)
     - [Initialize](./termux/init.md)
@@ -20,3 +16,7 @@
     - [Airline Setup](./vim/Airline.md)
     - [Annoying Tab width](./vim/TabSetting.md)
     - AirlineImg
+- git
+    - [Split a Repo](./git/SplitRepo.md)
+    - [Push without Password](./git/password.md)
+    - [Add SSH Key](./git/ssh.md)
