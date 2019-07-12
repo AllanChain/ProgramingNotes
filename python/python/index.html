@@ -1,0 +1,929 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Python the Language - ProgramingNotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#python-the-language" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="ProgramingNotes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ProgramingNotes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Python the Language
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="ProgramingNotes" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    ProgramingNotes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Table of Contents" class="md-nav__link">
+      Table of Contents
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/SplitRepo/" title="Split a Repo" class="md-nav__link">
+      Split a Repo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/password/" title="Push without Password" class="md-nav__link">
+      Push without Password
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/ssh/" title="Add SSH Key" class="md-nav__link">
+      Add SSH Key
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DailySnippets/" title="DailySnippets" class="md-nav__link">
+      DailySnippets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FTPFileDbClickOpen/" title="在ftp文件夹视图下实现双击打开文件" class="md-nav__link">
+      在ftp文件夹视图下实现双击打开文件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../RequestsGlimpse/" title="Requests初探" class="md-nav__link">
+      Requests初探
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TermuxWithBrowser/" title="让Termux对浏览器更友好" class="md-nav__link">
+      让Termux对浏览器更友好
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../packages/" title="Package Notes" class="md-nav__link">
+      Package Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pip/" title="Pip&Pypi" class="md-nav__link">
+      Pip&Pypi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python the Language
+      </label>
+    
+    <a href="./" title="Python the Language" class="md-nav__link md-nav__link--active">
+      Python the Language
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interesting-things-about-class" title="Interesting Things About Class" class="md-nav__link">
+    Interesting Things About Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-exceptions" title="Python Exceptions" class="md-nav__link">
+    Python Exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slicing" title="Slicing" class="md-nav__link">
+    Slicing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#here-is-a-valid-slice" title="Here is a valid slice" class="md-nav__link">
+    Here is a valid slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-valid-way-to-create-a-slice" title="a valid way to create a slice" class="md-nav__link">
+    a valid way to create a slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-invalid-way" title="the invalid way" class="md-nav__link">
+    the invalid way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperate-with-class" title="cooperate with class" class="md-nav__link">
+    cooperate with class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iter-take-callable-argument" title="iter take callable argument" class="md-nav__link">
+    iter take callable argument
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-__missing__" title="method __missing__" class="md-nav__link">
+    method __missing__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pth-file" title="The .pth file" class="md-nav__link">
+    The .pth file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-features-of-python" title="Hidden features of Python" class="md-nav__link">
+    Hidden features of Python
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readchr/" title="Read the Character Straight" class="md-nav__link">
+      Read the Character Straight
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readline/" title="Module readline" class="md-nav__link">
+      Module readline
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Termux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Termux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../termux/errors/" title="Error Handling" class="md-nav__link">
+      Error Handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../termux/init/" title="Initialize" class="md-nav__link">
+      Initialize
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Vim
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Vim
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vim/Airline/" title="Airline Setup" class="md-nav__link">
+      Airline Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vim/TabSetting/" title="Annoying Tab width" class="md-nav__link">
+      Annoying Tab width
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interesting-things-about-class" title="Interesting Things About Class" class="md-nav__link">
+    Interesting Things About Class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-exceptions" title="Python Exceptions" class="md-nav__link">
+    Python Exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slicing" title="Slicing" class="md-nav__link">
+    Slicing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#here-is-a-valid-slice" title="Here is a valid slice" class="md-nav__link">
+    Here is a valid slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-valid-way-to-create-a-slice" title="a valid way to create a slice" class="md-nav__link">
+    a valid way to create a slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-invalid-way" title="the invalid way" class="md-nav__link">
+    the invalid way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperate-with-class" title="cooperate with class" class="md-nav__link">
+    cooperate with class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iter-take-callable-argument" title="iter take callable argument" class="md-nav__link">
+    iter take callable argument
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-__missing__" title="method __missing__" class="md-nav__link">
+    method __missing__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pth-file" title="The .pth file" class="md-nav__link">
+    The .pth file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-features-of-python" title="Hidden features of Python" class="md-nav__link">
+    Hidden features of Python
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python-the-language">Python the Language</h1>
+<p>Notes for python language itself.</p>
+<h2 id="interesting-things-about-class">Interesting Things About Class</h2>
+<p>Let's have a look at the following code first:</p>
+<pre><code class="python">class A:
+    def printf(*args):
+        print(args)
+def printff(*args):
+    print(args)
+
+a=A()
+a.printf()
+print ('-'*5,a.printf)
+
+A.printf=printff
+a.printf()
+print ('-'*5,a.printf)
+
+A.printf=print
+a.printf()
+print ('-'*5,a.printf)
+
+a.printf=printff
+a.printf()
+print ('-'*5,a.printf)
+
+A.printf=printff
+a.printf()
+print ('-'*5,a.printf)
+print ('-'*5,A.printf)
+
+##Output
+##(&lt;__main__.A object at 0x01371070&gt;,)
+##----- &lt;bound method A.printf of &lt;__main__.A object at 0x01371070&gt;&gt;
+##(&lt;__main__.A object at 0x01371070&gt;,)
+##----- &lt;bound method A.printff of &lt;__main__.A object at 0x01371070&gt;&gt;
+##
+##----- &lt;built-in function print&gt;
+##()
+##----- &lt;function printff at 0x01795858&gt;
+##()
+##----- &lt;function printff at 0x01795858&gt;
+##----- &lt;function printff at 0x01795858&gt;
+</code></pre>
+
+<p>And from this kind of behavior, I think I leart :</p>
+<ul>
+<li>The method defined in the class is called <code>bound method</code>.</li>
+<li>The function specificly assigned to the class later will become its <code>bound method</code> too. And <strong>magically</strong>, the name will change to the function's name. What's more, when I call <code>a.printff</code> ,it throw an error.</li>
+<li>The python interpreter treated built-in functions diffrently. Thus function <code>print</code> wound not become a <code>bound method</code>.</li>
+<li>After the function is assign to the instance, it would not become a <code>bound method</code>, but rather simply a function.</li>
+<li>~~After a function is assign to the instance, the corresponding <code>bound method</code> in the class would magically change.~~</li>
+<li>After a function is assign to the instance, the <strong>behavoir</strong> when assigning functions again to an class would <strong>magically</strong> change.</li>
+<li>(Though I <strong>really don't</strong> know some of them ,I think I'd better put them down)</li>
+</ul>
+<h2 id="python-exceptions">Python Exceptions</h2>
+<p>I encountered this problem when writing <code>nb.py</code>. I wrote<code>except Exception:</code> instead of <code>except KeyboardInterrupt:</code> ,and it did not catch the KeyboardInterrupt as I expected. But now I figured out that KeyboardInterrupt is not included in Exception:</p>
+<pre><code class="shell">BaseException
++-- SystemExit
++-- KeyboardInterrupt
++-- GeneratorExit
++-- Exception
+    +-- ...
+    +-- ...
+</code></pre>
+
+<h2 id="slicing">Slicing</h2>
+<h4 id="here-is-a-valid-slice">Here is a valid slice</h4>
+<pre><code class="python">s='jksahgijsdhgedhjgkh'
+print(s[5:999])
+
+##Output
+##gijsdhgedhjgkh
+</code></pre>
+
+<h4 id="a-valid-way-to-create-a-slice">a valid way to create a slice</h4>
+<pre><code class="python">a=slice(1,5,2)
+print(a.start)
+print(a.stop,a.step)
+
+##Output
+##1
+##5 2
+</code></pre>
+
+<h4 id="the-invalid-way">the invalid way</h4>
+<pre><code class="python">a=[1:3:4]
+
+##Output
+##SyntaxError
+</code></pre>
+
+<h4 id="cooperate-with-class">cooperate with class</h4>
+<pre><code class="python">class A:
+    def __getitem__(self,arg):
+        print(arg)
+        return 
+a=A()
+b=a[123,...,1:3:5,[1,2,3]]
+
+##Output
+##(123, Ellipsis, slice(1, 3, 5), [1, 2, 3])
+</code></pre>
+
+<h2 id="iter-take-callable-argument">iter take callable argument</h2>
+<pre><code>def seek_next_line(f):
+    for c in iter(lambda: f.read(1),'\n'):
+            pass
+</code></pre>
+
+<p>The <code>iter(callable, until_value)</code> function repeatedly calls callable and yields its result until <code>until_value</code> is returned.</p>
+<h2 id="method-__missing__">method <code>__missing__</code></h2>
+<p>From 2.5 onwards dicts have a special method <code>__missing__</code> that is invoked for missing items:</p>
+<pre><code class="python">&gt;&gt;&gt; class MyDict(dict):
+...  def __missing__(self, key):
+...   self[key] = rv = []
+...   return rv
+...
+&gt;&gt;&gt; m = MyDict()
+&gt;&gt;&gt; m[&quot;foo&quot;].append(1)
+&gt;&gt;&gt; m[&quot;foo&quot;].append(2)
+&gt;&gt;&gt; dict(m)
+{'foo': [1, 2]}
+</code></pre>
+
+<p>There is also a dict subclass in collections called defaultdict that does pretty much the same but calls a function without arguments for not existing items:</p>
+<pre><code class="python">&gt;&gt;&gt; from collections import defaultdict
+&gt;&gt;&gt; m = defaultdict(list)
+&gt;&gt;&gt; m[&quot;foo&quot;].append(1)
+&gt;&gt;&gt; m[&quot;foo&quot;].append(2)
+&gt;&gt;&gt; dict(m)
+{'foo': [1, 2]}
+</code></pre>
+
+<p>I recommend converting such dicts to regular dicts before passing them to functions that don't expect such subclasses. A lot of code uses <code>d[a_key]</code> and catches KeyErrors to check if an item exists which would add a new item to the dict.</p>
+<h2 id="the-pth-file">The <code>.pth</code> file</h2>
+<p>To add more python modules (espcially 3rd party ones), most people seem to use <code>PYTHONPATH</code> environment variables or they add symlinks or directories in their site-packages directories. Another way, is to use <code>*.pth</code> files. Here's the official python doc's explanation:</p>
+<blockquote>
+<p>The most convenient way [to modify python's search path] is to add a path configuration file to a directory that's already on Python's path, usually to the .../site-packages/ directory. Path configuration files have an extension of .pth, and each line must contain a single path that will be appended to sys.path. (Because the new paths are appended to sys.path, modules in the added directories will not override standard modules. This means you can't use this mechanism for installing fixed versions of standard modules.)</p>
+</blockquote>
+<h2 id="hidden-features-of-python">Hidden features of Python</h2>
+<p>What are the lesser-known but useful features of the Python programming language?</p>
+<p>Discussion at <a href="https://stackoverflow.com/questions/101268/hidden-features-of-python">https://stackoverflow.com/questions/101268/hidden-features-of-python</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../pip/" title="Pip&Pypi" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Pip&Pypi
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../readchr/" title="Read the Character Straight" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Read the Character Straight
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
