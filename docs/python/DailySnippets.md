@@ -23,3 +23,12 @@
 				- command
     - .kux
 - 其中`PyKux`项仿照`Python.File`填写，`.kux`项仿照`.mp4`填写
+
+## FFMpeg 下载 m3u8
+
+方便快捷，一行到位！
+
+```shell
+ffmpeg -i "https://zuikzy.603ee.com/2019/05/01/irlmX9Oasv3yhzR4/playlist.m3u8" example.mp4
+```
+

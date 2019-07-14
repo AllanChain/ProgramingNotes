@@ -4,6 +4,7 @@ Download [xb.py](xb.py)
 难点：
 
 - 获取jupyter等应用的实时输出
+
 ```python
 import subprocess
 backup = subprocess.Popen(
@@ -11,8 +12,10 @@ backup = subprocess.Popen(
 for line in iter(backup.stdout.readline, b''):
 	line = line.rstrip().decode('utf8')
 ```
+
 - 使Ctrl+C能使让应用结束
     - 只有以`shell=False`启动的`Popen`才能收到中止信号，不要问我为什么。
+
 ```python
 try:
     do_something()
@@ -23,7 +26,9 @@ except KeyboardInterrupt:
     backup.kill()
     _exit(0)
 ```
+
 - 能自动识别使用什么应用
+
 ```python
 # 基于文件数量多少的分类
 
@@ -75,7 +80,9 @@ def guess_app():
         return 'j'
     raise NotImplementedError('No application found to implement this.')
 ```
+
 - 有时候应用不止一次地输出应打开的地址，这时要立一个flag
+
 ```python
 def start_app(cmd):
     XB_STATUS = False
