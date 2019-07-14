@@ -4,7 +4,7 @@
     - Ubuntu 19.04 Disco Dingo
     - Python 3.7.3
     - kivy 1.10.1
-    - buildozer xxxxx
+    - buildozer 0.39
 
 ## My First Android Application Ever Built
 
