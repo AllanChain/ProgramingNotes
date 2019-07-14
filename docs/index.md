@@ -16,6 +16,8 @@
     - [Airline Setup](./vim/Airline.md)
     - [Annoying Tab width](./vim/TabSetting.md)
     - AirlineImg
+- kivy
+    - [Using Kivy and Buildozer to Build Android APK](./kivy/Buildozer.md)
 - git
     - [Split a Repo](./git/SplitRepo.md)
     - [Push without Password](./git/password.md)
