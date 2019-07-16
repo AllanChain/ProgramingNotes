@@ -6,11 +6,6 @@
     <script type="text/JavaScript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <title>桐高2019届300班蹭饭图</title>
     <!-- 在body标签中加入div用于显示地图 -->
-    <div id="allmap"></div>
-    <div class="search_box">
-      <input id="search_input" onkeydown="entersearch(event)"/>
-      <button id="search_button" onclick="search()">搜索</button>
-    </div>
     <!-- 最后设置div样式 -->
     <style type="text/css">
 body, html,#allmap {
@@ -25,9 +20,23 @@ body, html,#allmap {
   position: absolute;
   top: 0
 }
+.infoUniversity{
+  background-color: #300;
+  color: #ddd;
+  font-size: 20px;
+  opacity: 0.5;
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  top: 10%;
+  left: 10%;
+  padding: 5px;
+  overflow-y: scroll;
+}
     </style>
 
     <script type="text/javascript" src="release.json"></script>
+    <div id="allmap"></div>
     <!-- 三、开始定位 -->
     <script type="text/javascript">
       var map = new BMap.Map("allmap");//创建地图实例
@@ -69,22 +78,28 @@ function setMarker(data, index){
 }
 
 function showInfo(data, hilite=-1){
-  var sContent = '<ul>';
+  clearInfoDiv();
+  var sContent = '<div class="infoUniversity" onclick="clearInfoDiv();map.setZoom(6)">'
+  if (hilite == -2){
+    sContent += '<b>' + data.University + '</b>'
+  }else{
+    sContent += data.University
+  };
+  sContent += '<ul>';
   data.Students.forEach(function(student, index){
     if (index == hilite){
       sContent += '<li class="info_li"><b>' + student + '</b></li>'
     }else{
       sContent += '<li class="info_li">' + student + '</li>'
     }});
-  sContent += '</ul>'
-  var infoWindow = new BMap.InfoWindow(sContent);// 创建信息窗口对象
-  data.Marker.openInfoWindow(infoWindow);//图片加载完毕重绘infowindow
-  if (hilite == -2){
-    infoWindow.setTitle('<b>' + data.University + '</b>')
-  }else{
-    infoWindow.setTitle(data.University)
-  };
-  infoWindow.setWidth(300);
+  sContent += '</ul></div>';
+  map.centerAndZoom(data.Marker.getPosition(), 9);
+  sContent = $.parseHTML(sContent);
+  $(sContent).appendTo("body")
+  $("body").add(sContent);
+}
+function clearInfoDiv(){
+  $(".infoUniversity").remove()
 }
 function search(){
   if ($("#search_button").text() == "搜索"){
@@ -145,5 +160,9 @@ function chrsInStr(chrs, str){
     </script>
   </head>
   <body>
+    <div class="search_box">
+      <input id="search_input" onkeydown="entersearch(event)"/>
+      <button id="search_button" onclick="search()">搜索</button>
+    </div>
   </body>
 </html>
