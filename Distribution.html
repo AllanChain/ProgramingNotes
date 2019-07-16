@@ -66,12 +66,17 @@ function setMarker(data, index){
   //Closure: function in function, lenthening the life time of variable
   (function() {
     mk.addEventListener("click",function(){
-      showInfo(this, data);
+      showInfo(data);
+    });
+  })();
+  (function() {
+    label.addEventListener("click",function(){
+      showInfo(data);
     });
   })();
 }
 
-function showInfo(thisMarker,data, hilite=-1){
+function showInfo(data, hilite=-1){
   var sContent = '<ul>';
   data.Students.forEach(function(student, index){
     if (index == hilite){
@@ -81,7 +86,7 @@ function showInfo(thisMarker,data, hilite=-1){
     }});
   sContent += '</ul>'
   var infoWindow = new BMap.InfoWindow(sContent);// 创建信息窗口对象
-  thisMarker.openInfoWindow(infoWindow);//图片加载完毕重绘infowindow
+  data.Marker.openInfoWindow(infoWindow);//图片加载完毕重绘infowindow
   infoWindow.setTitle(data.University);
   infoWindow.setWidth(300);
 }
@@ -98,7 +103,7 @@ function search(){
     current_id = 0
   }
   data = results[current_id].item;
-  showInfo(data.Marker, data);
+  showInfo(data);
 }
 function entersearch(event){
   if (event.keyCode == 13){
