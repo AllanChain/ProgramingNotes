@@ -4,7 +4,7 @@
     <!-- 接着引入API和JQuery： -->
     <script type="text/JavaScript" src="https://api.map.baidu.com/api?v=2.0&ak=Ra7pfVaOAGRU0zCsACiQAduq6wLOHIH0"></script>
     <script type="text/JavaScript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+    <title>桐高2019届300班蹭饭图</title>
     <!-- 在body标签中加入div用于显示地图 -->
     <div id="allmap"></div>
     <div class="search_box">
@@ -30,15 +30,7 @@ body, html,#allmap {
     <script type="text/javascript" src="release.json"></script>
     <!-- 三、开始定位 -->
     <script type="text/javascript">
-var map = new BMap.Map("allmap");//创建地图实例
-var options = {
-  includeScore: true,
-  includeMatches: true,
-  threshold: 0.5,
-  keys: ['University', 'Students']
-};
-var fuse = new Fuse(universities, options);
-var search_results = {};
+      var map = new BMap.Map("allmap");//创建地图实例
 var current_id = 0;
 $(function() {
   //初始化地图 默认加载北京天安门
@@ -87,7 +79,11 @@ function showInfo(data, hilite=-1){
   sContent += '</ul>'
   var infoWindow = new BMap.InfoWindow(sContent);// 创建信息窗口对象
   data.Marker.openInfoWindow(infoWindow);//图片加载完毕重绘infowindow
-  infoWindow.setTitle(data.University);
+  if (hilite == -2){
+    infoWindow.setTitle('<b>' + data.University + '</b>')
+  }else{
+    infoWindow.setTitle(data.University)
+  };
   infoWindow.setWidth(300);
 }
 function search(){
@@ -95,15 +91,14 @@ function search(){
     $("#search_button").text("下个");
     current_id = 0;
     query = $("#search_input").val();
-    results = fuse.search(query);
+    results = getAll(query);
     console.log(results);
   }
   current_id += 1;
   if (current_id >= results.length){
     current_id = 0
   }
-  data = results[current_id].item;
-  showInfo(data);
+  showInfo(results[current_id].item, results[current_id].hilite);
 }
 function entersearch(event){
   if (event.keyCode == 13){
@@ -111,6 +106,41 @@ function entersearch(event){
   }else{
     $("#search_button").text("搜索");
   }
+}
+function getAll(query){
+  results = []
+  console.log(current_id);
+  for(var i = 0; i < universities.length; i++){
+    data = universities[i];
+    students = data.Students
+    for(var j = 0; j < students.length; j++){
+      if (chrsInStr(query, students[j])){
+        results.push({item: data, hilite: j});
+      }
+    };
+  };
+  for(var i = 0,len = universities.length; i < len; i++){
+    data = universities[i];
+    if (chrsInStr(query, data.University)){
+      results.push({item: data, hilite: -2})
+      }
+  };
+  return results
+}
+//简称必须是全称中按顺序取的字
+function chrsInStr(chrs, str){
+  j = 0
+  for (var i=0; i < chrs.length; i++){
+    chr = chrs.charAt(i);
+    while (str.charAt(j) != chr){
+      j++;
+      if (j == str.length){
+        return false
+      }
+    }
+    j++;
+  }
+  return true
 }
     </script>
   </head>
