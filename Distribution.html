@@ -18,20 +18,23 @@ body, html,#allmap {
 
 .search_box{
   position: absolute;
-  top: 0;
+  top: 10px;
   text-align: right;
 }
 .infoUniversity{
   border-radius: 21px;
-  background-color: #c00;
+  background-color: #000099;
   color: #ddd;
+  text-shadow: 1px 1px 3px #000;
   font-size: 1.2em;
   opacity: 0.5;
   position: absolute;
   width: 80%;
+  max-width: 400px;
   height: 30%;
   top: 10%;
-  left: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   padding: 5px;
   overflow-y: scroll;
 }
@@ -53,11 +56,15 @@ $(function() {
   //向地图中添加比例尺控件
   var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
   map.addControl(ctrl_sca);
-  var point = new BMap.Point(116.331398,39.897445);
-  map.centerAndZoom(point,6);//初始化地图，point为中心点，缩放级别为16
+  aerialView();
   //新建标注
   universities.forEach(setMarker);
 });
+function aerialView(){
+  clearInfoDiv();
+  map.centerAndZoom(new BMap.Point(118,35),6);//初始化地图，point为中心点，缩放级别为6
+
+}
 function setMarker(data, index){
   var point = new BMap.Point(data.Lng, data.Lat);
   var mk = new BMap.Marker(point);
@@ -185,6 +192,7 @@ function chrsInStr(chrs, str){
   </head>
   <body>
     <div class="search_box">
+      <button onclick="aerialView()">鸟瞰</button>
       <input id="search_input" onkeydown="entersearch(event)"/>
       <button id="search_button" onclick="search()">搜索</button>
     </div>
