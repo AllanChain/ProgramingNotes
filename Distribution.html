@@ -18,12 +18,14 @@ body, html,#allmap {
 
 .search_box{
   position: absolute;
-  top: 0
+  top: 0;
+  text-align: right;
 }
 .infoUniversity{
-  background-color: #300;
+  border-radius: 21px;
+  background-color: #c00;
   color: #ddd;
-  font-size: 20px;
+  font-size: 1.2em;
   opacity: 0.5;
   position: absolute;
   width: 80%;
@@ -43,6 +45,14 @@ body, html,#allmap {
 var current_id = 0;
 $(function() {
   //初始化地图 默认加载北京天安门
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_RIGHT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+  //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+  //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
   var point = new BMap.Point(116.331398,39.897445);
   map.centerAndZoom(point,6);//初始化地图，point为中心点，缩放级别为16
   //新建标注
@@ -79,7 +89,7 @@ function setMarker(data, index){
 
 function showInfo(data, hilite=-1){
   clearInfoDiv();
-  var sContent = '<div class="infoUniversity" onclick="clearInfoDiv();map.setZoom(6)">'
+  var sContent = '<div class="infoUniversity" onclick="clearInfoDiv()">'
   if (hilite == -2){
     sContent += '<b>' + data.University + '</b>'
   }else{
@@ -87,13 +97,27 @@ function showInfo(data, hilite=-1){
   };
   sContent += '<ul>';
   data.Students.forEach(function(student, index){
+    var studentInfo = student.split("@");
+    var studentHTML = '<li calss="info_li">' + studentInfo[0];
+    if (studentInfo.length > 1){
+      var attr = [ '专业：','电话：']
+      studentHTML += '<ul>'
+      for (var i=1; i<studentInfo.length; i++){
+        info = studentInfo[i]
+        if (info != ''){
+          studentHTML += '<li>' + attr[i-1] + info + '</li>'
+        }
+      }
+      studentHTML += '</ul>'
+    }
+    studentHTML += '</li>'
     if (index == hilite){
-      sContent += '<li class="info_li"><b>' + student + '</b></li>'
+      sContent += '<b>' + studentHTML + '</b>'
     }else{
-      sContent += '<li class="info_li">' + student + '</li>'
+      sContent += studentHTML
     }});
-  sContent += '</ul></div>';
-  map.centerAndZoom(data.Marker.getPosition(), 9);
+  sContent += '</ul><p style="font-size: 12px; align: center"><br/>轻触关闭窗口</p></div>';
+  map.setCenter(data.Marker.getPosition());
   sContent = $.parseHTML(sContent);
   $(sContent).appendTo("body")
   $("body").add(sContent);
