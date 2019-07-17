@@ -4,6 +4,7 @@
     <!-- 接着引入API和JQuery： -->
     <script type="text/JavaScript" src="https://api.map.baidu.com/api?v=2.0&ak=Ra7pfVaOAGRU0zCsACiQAduq6wLOHIH0"></script>
     <script type="text/JavaScript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <title>桐高2019届300班蹭饭图</title>
     <!-- 在body标签中加入div用于显示地图 -->
     <!-- 最后设置div样式 -->
@@ -20,6 +21,12 @@ body, html,#allmap {
   position: absolute;
   top: 10px;
   text-align: right;
+}
+#key{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .infoUniversity{
   border-radius: 21px;
@@ -40,13 +47,12 @@ body, html,#allmap {
 }
     </style>
 
-    <script type="text/javascript" src="release.json"></script>
     <div id="allmap"></div>
     <!-- 三、开始定位 -->
     <script type="text/javascript">
       var map = new BMap.Map("allmap");//创建地图实例
 var current_id = 0;
-$(function() {
+function initMap() {
   //初始化地图 默认加载北京天安门
   var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_RIGHT,type:BMAP_NAVIGATION_CONTROL_LARGE});
   map.addControl(ctrl_nav);
@@ -59,11 +65,10 @@ $(function() {
   aerialView();
   //新建标注
   universities.forEach(setMarker);
-});
+}
 function aerialView(){
   clearInfoDiv();
-  map.centerAndZoom(new BMap.Point(118,35),6);//初始化地图，point为中心点，缩放级别为6
-
+  map.centerAndZoom(new BMap.Point(119,35),6);//初始化地图，point为中心点，缩放级别为6
 }
 function setMarker(data, index){
   var point = new BMap.Point(data.Lng, data.Lat);
@@ -169,7 +174,7 @@ function getAll(query){
     data = universities[i];
     if (chrsInStr(query, data.University)){
       results.push({item: data, hilite: -2})
-      }
+    }
   };
   return results
 }
@@ -189,8 +194,28 @@ function chrsInStr(chrs, str){
   return true
 }
     </script>
+    <!--Decryption{{{-->
+    <script>
+      function enterdecode(e){
+        if (e.keyCode == 13){
+          key = $("#key").val();
+          data = 'U2FsdGVkX18lELSocitUItbOiE0xh4kQm2XsEHEXiFu3LwGSXBGQ4J6Dv1mo8AGtmfVUn6fPaM9bA/nNHM+V5ga/PadoPY8O+YilWI5zdK2DDKLWtsJMWTxpRVK3hQmtQWaZfauS1HSrfiT4QKGQa0AuTV0nUtpsX2J9sEQckfPLttr2gCIojxf6bEfhipWgpNcPQugcUibhdUMUkMLSJ4biAp4haLcL/5rEDKCdt4XoceeXwgzgNcnP3FJqPHhSgfx21j9ALlJKeNvdp06escBxsFuj4T2PSry8nzKP7T0sjSj7pc4xHflC0u7TsZFXURKdHqFuZVGTBF71muF30XjMiL2uLVGnoQzNxaIFHdiD29YGYHJqt8QcFjH9sLHfz0WDzYdaEVgbeCu3b7I0hfHIe/O9B5m1pkNXZE1Qw3FGYjJ4YW1zUECizUvglWPTAzCG6WP7Hw1UD7UuL6ZWm413f9S5yB3SMpUKBR3sQqiXGXUdXOVQQ0P1PfvweL2Fz1SSDjg+ODMIM+tP4hPXq5at8/hOvxJHn19jZZ3s+JnR/G30sqrRDZ621502tsdTyBfHAYJ7w4bHJxZy6uVXfkPZmniRhGSmBCNhi3lx7lCq4lPtuldxqJSNDfI0GpyUr/7ntVu8jY8bWY+5Eh+OLGkt40/B9O3QFNf5d+QH8MfKjBdOAI50V4gtJHFL+w03+9+5BFc7yj1f+jGQLm5zDTkSZni7DqFRHDoUjDoSkXpMvldpkaaYwsAzycUT+zN9Mj8l/PXBR6BXfyWgIsCH1VQOtWtLj8uTnNpdgF7osiBgsoG7EBPtsUnLP0UWzDOQcD1sloxa1smTLQdMXP5BagnmbFChAaHxN3W5HMPED/uk2jOz633ERxVVTQE4dntt'
+          d=CryptoJS.AES.decrypt(data, key)
+          e=CryptoJS.enc.Latin1.stringify(d)
+          f=decodeURIComponent(escape(window.atob(e)))
+          eval(f)
+          if (typeof universities !== "undefined"){
+            console.log('YES')
+            initMap()
+            $("#key").remove();
+          }
+        }
+      }
+    </script>
+    <!--}}}-->
   </head>
   <body>
+      <input id="key" type="password" placeholder="我们的密钥" onkeydown="enterdecode(event)"/>
     <div class="search_box">
       <button onclick="aerialView()">鸟瞰</button>
       <input id="search_input" onkeydown="entersearch(event)"/>
