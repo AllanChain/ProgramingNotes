@@ -1,15 +1,8 @@
 # Push without Password
 ### on Linux
-- First
+- Just
 ```shell
-cd ~
-touch .git-credentials
-vim .git-credentials
-```
-- Then type:
-`https://{username}:{password}@github.com`
-- Finally:
-```shell
+echo https://{username}:{password}@github.com > ~/.git-credentials
 git config --global credential.helper store
 ```
 - And you will see `[credential]helper = store` in `.gitconfig`
